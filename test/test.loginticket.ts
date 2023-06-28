@@ -34,6 +34,10 @@ describe('loginticket', () => {
       iss: 'iss',
       iat: 1514162443,
       exp: 1514166043,
+      google: {
+        access_levels: ['access_levels'],
+        device_id: 'device_id',
+      },
     };
     const ticket = new LoginTicket('myenvelope', payload);
     assert.deepStrictEqual(ticket.getAttributes(), {

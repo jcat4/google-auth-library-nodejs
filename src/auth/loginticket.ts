@@ -185,4 +185,23 @@ export interface TokenPayload {
    * Might be provided when a name claim is present.
    */
   locale?: string;
+
+  /**
+   * The request's access levels and device information, if present.
+   */
+  google?: GoogleClaim;
+}
+
+export interface GoogleClaim {
+  /**
+   * The access levels that apply to this request.
+   * Provided if one or more access levels apply to the request.
+   */
+  access_levels?: string[];
+
+  /**
+   * The device_id tied to this request.
+   * Provided if a device policy is specified and the Org has access to device data.
+   */
+  device_id?: string;
 }
